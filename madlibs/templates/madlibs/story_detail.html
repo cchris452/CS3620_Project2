@@ -1,0 +1,18 @@
+{% extends "madlibs/base.html" %}
+{% block title %}{{ madlib.name }} | Mad Libs{% endblock %}
+{% block body %}
+    <section class="page-wrap">
+        <div class="page-heading">
+            <p class="eyebrow">From the story shelf</p>
+            <h1>{{ madlib.name }}</h1>
+        </div>
+        <article class="story-paper">
+            <p>{{ madlib.story_text }}</p>
+        </article>
+        <div class="actions">
+            <a class="button" href="{% url 'madlibs:create' %}">Make another</a>
+            <a class="button button-secondary" href="{% url 'madlibs:stories' %}">Back to stories</a>
+        </div>
+    </section>
+{% endblock %}
+                  

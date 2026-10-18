@@ -1,0 +1,16 @@
+{% extends "madlibs/base.html" %}
+{% block title %}Create a Story | Mad Libs{% endblock %}
+{% block body %}
+    <section class="page-wrap form-layout">
+        <div class="page-heading">
+            <p class="eyebrow">Your turn</p>
+            <h1>Create a story</h1>
+            <p>Fill in each word, then see what your choices become.</p>
+        </div>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="button">Write my story</button>
+        </form>
+    </section>
+{% endblock %}

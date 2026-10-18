@@ -1,0 +1,26 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Mad Libs{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+<header class="site-header">
+    <nav class="nav-inner" aria-label="Main navigation">
+        <a href="{% url 'madlibs:index' %}" class="brand">Mad Libs<span>.</span></a>
+        <div class="nav-links">
+            <a href="{% url 'madlibs:index' %}">Home</a>
+            <a href="{% url 'madlibs:create' %}">Create a story</a>
+            <a href="{% url 'madlibs:stories' %}">Stories</a>
+        </div>
+    </nav>
+</header>
+<main class="site-main">
+    {% block body %}{% endblock %}
+</main>
+<footer class="site-footer">Make a story out of anything.</footer>
+</body>
+</html>

@@ -17,10 +17,11 @@ Including another URLconf
 from . import views
 from django.urls import path
 
-app_name = 'MadLibs'
+app_name = 'madlibs'
 urlpatterns = [
-    path('', views.index, name='home'),
+    path('', views.index, name='index'),
     path('create/', views.create, name='create'),
-    path('story/', views.story, name='story'),
+    path('story/<int:madlibs_id>/', views.story, name='story'),
     path('stories/', views.stories, name='stories'),
+    path('stories/<int:madlibs_id>/', views.story_detail, name='story_detail'),
 ]

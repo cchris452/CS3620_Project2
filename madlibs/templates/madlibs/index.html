@@ -1,0 +1,32 @@
+{% extends "madlibs/base.html" %}
+{% block title %}Mad Libs | Story Studio{% endblock %}
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, 
+          maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mad Libs</title> 
+</head>
+<body>
+{% block body %}
+    <div class="container" style="display: flex; flex-direction: column;">
+    <section class="page-wrap hero">
+        <div class="hero-copy">
+            <p class="eyebrow">A word game for your imagination</p>
+            <h1>Turn a few words into a whole story.</h1>
+            <p>Pick a name, a place, and a handful of unexpected words. We will turn them into a story worth reading aloud.</p>
+            <div class="actions">
+                <a class="button" href="{% url 'madlibs:create' %}">Create a story</a>
+                <a class="button button-secondary" href="{% url 'madlibs:stories' %}">Browse stories</a>
+            </div>
+        </div>
+        <aside class="hero-note" aria-label="A sample story line">
+            <p>"One sunny day, a green otter decided to dance."</p>
+            <span>Every story starts with your words.</span>
+        </aside>
+    </section>
+{% endblock %}

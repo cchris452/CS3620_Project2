@@ -1,0 +1,37 @@
+{% extends "madlibs/base.html" %}
+{% block title %}Stories | Mad Libs{% endblock %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mad Lib Stories</title>
+</head>
+<body>
+{% block body %}
+    <section class="page-wrap">
+        <div class="page-heading">
+            <p class="eyebrow">The story shelf</p>
+            <h1>Stories</h1>
+            <p>Pick one to read, or make a new one from your own words.</p>
+        </div>
+        {% if madlibslist %}
+            <div class="story-grid">
+            {% for madlib in madlibslist %}
+                <article class="story-card">
+                    <h2>{{ madlib.name }}</h2>
+                    <a href="{% url 'madlibs:story_detail' madlib.id %}" class="button button-secondary">Read story</a>
+                </article>
+            {% endfor %}
+            </div>
+        {% else %}
+            <div class="empty-state">
+                <h2>No stories yet</h2>
+                <p>Your first one is only a few words away.</p>
+                <a class="button" href="{% url 'madlibs:create' %}">Create the first story</a>
+            </div>
+        {% endif %}
+    </section>
+{% endblock %}  

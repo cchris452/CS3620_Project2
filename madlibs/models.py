@@ -2,7 +2,7 @@ from django.db import models
 import random
 
 # Create your models here.
-class MadLib(models.Model):
+class madlibs (models.Model):
     name = models.CharField(max_length=100)
     place = models.CharField(max_length=100)
     adjective = models.CharField(max_length=100)
